@@ -36,7 +36,7 @@ export interface LoginData {
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
-  isLoading: boolean; // ✅ NEW
+  isLoading: boolean; 
   login: (data: LoginData) => Promise<void>;
   logout: () => void;
   updateUser: (updatedUser: User) => void;
@@ -59,7 +59,7 @@ export const AuthContext = createContext<AuthContextType | undefined>(
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true); // ✅ NEW
+  const [isLoading, setIsLoading] = useState<boolean>(true); 
 
   useEffect(() => {
     const storedUser = sessionAuth.getUser();
